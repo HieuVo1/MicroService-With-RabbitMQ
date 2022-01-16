@@ -1,0 +1,6 @@
+rabbitmqctl stop_app: stop app
+rabbitmqctl start_app: start app
+rabbitmqctl reset: reset
+rabbitmqctl add_user [UserName] [Password]: add user
+rabbitmqctl set_user_tags [UserName] administrator: phaan quyen
+rabbitmqctl set_permissions -p / [UserName] ".*" ".*" ".*" 
