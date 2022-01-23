@@ -1,3 +1,5 @@
+using MediatR;
+using MicroRabbit.Banking.API.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +30,13 @@ namespace MicroRabbit.Banking.API
         {
 
             services.AddControllers();
+
+            services.ConfigureDbContext(Configuration);
+
+            services.AddMediatR(typeof(Startup));
+
+            services.ConfigureServices();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MicroRabbit.Banking.API", Version = "v1" });
